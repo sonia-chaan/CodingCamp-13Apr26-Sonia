@@ -1,0 +1,247 @@
+/* ── Page & Layout ── */
+.page-bg {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Header & Dark Mode */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.app-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+#theme-toggle {
+  position: absolute;
+  right: 0;
+}
+
+#theme-toggle i {
+  margin-right: 8px;
+}
+
+/* ── Card Styles ── */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: background 0.3s ease;
+}
+
+.balance-card {
+  text-align: center;
+  padding: 32px;
+}
+
+.balance-label {
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2196F3;
+  margin: 0;
+}
+
+.card-heading {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* ── Form ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  width: 100%;
+  background: #2196F3;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ── Monthly Summary ── */
+.summary-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#month-picker {
+  width: auto;
+  padding: 5px;
+}
+
+.summary-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.summary-val {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2196F3;
+  margin: 5px 0;
+}
+
+/* ── Transaction List ── */
+#transaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-name {
+  font-weight: bold;
+}
+
+.transaction-amount {
+  color: #2196F3;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.category-badge {
+  font-size: 0.7rem;
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 10px;
+  width: fit-content;
+  color: #666;
+  margin-top: 4px;
+}
+
+.delete-btn {
+  background: #ff4757;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* ── Layout Bottom ── */
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Dark Mode Theme ── */
+body.dark-theme {
+  background: #1a1a1a;
+  color: #eee;
+}
+
+.dark-theme .card {
+  background: #2d2d2d;
+  color: #eee;
+}
+
+.dark-theme .app-title,
+.dark-theme .card-heading {
+  color: #fff;
+}
+
+.dark-theme .form-input {
+  background: #3d3d3d;
+  border-color: #555;
+  color: #fff;
+}
+
+.dark-theme .transaction-item {
+  border-bottom-color: #444;
+}
+
+.dark-theme .category-badge {
+  background: #444;
+  color: #ccc;
+}
+
+.btn-secondary,
+.btn-toggle {
+  border: 1px solid #2196F3;
+  color: #2196F3;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.category-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  background: #e3f2fd;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #333;
+}

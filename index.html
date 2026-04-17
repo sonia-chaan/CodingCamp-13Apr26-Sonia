@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-bg">
+  <div class="container">
+    
+    <div class="header-container">
+      <h1 class="app-title">Expense Budget Visualizer</h1>
+     <button id="theme-toggle" class="btn-secondary">
+      <i id="theme-icon" class="fas fa-moon"></i> Dark Mode
+    </button>
+    </div>
+
+    <div id="balance-card" class="card balance-card">
+      <p class="balance-label">TOTAL BALANCE</p>
+      <p id="total-balance" class="balance-amount">$0.00</p>
+    </div>
+
+    <div id="add-transaction-card" class="card">
+      <h2 class="card-heading">Add Transaction</h2>
+      <form id="form">
+        <div class="form-group">
+          <label for="item-name">Item Name</label>
+          <input id="item-name" type="text" class="form-input" placeholder="e.g. Coffee" required />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input id="amount" type="number" step="0.01" class="form-input" placeholder="0.00" required />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" class="form-input" required>
+            <option value="">Select...</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Fun">Fun</option>
+          </select>
+        </div>
+        <p id="form-error" class="form-error"></p>
+        <button type="submit" class="btn-primary">Add Transaction</button>
+      </form>
+
+      <div id="category-manager" class="category-manager">
+        <h3 class="category-manager-heading">Custom Categories</h3>
+        <div class="category-input-row">
+          <input id="category-name-input" type="text" class="form-input category-name-input" placeholder="New category" maxlength="30" />
+          <button id="add-category-btn" type="button" class="btn-secondary">Add</button>
+        </div>
+        <div id="category-tag-list" class="category-tag-list"></div>
+      </div>
+    </div>
+
+    <div id="monthly-summary-card" class="card">
+      <div class="monthly-summary-header">
+        <h2 class="card-heading">Monthly Summary</h2>
+        <div class="summary-controls">
+          <input type="month" id="month-picker" class="form-input" />
+          <button id="summary-toggle-btn" type="button" class="btn-toggle">Show</button>
+        </div>
+      </div>
+      <div id="monthly-summary-body" class="monthly-summary-body" hidden>
+        <div id="monthly-summary-content"></div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div id="transactions-card" class="card">
+        <h2 class="card-heading">Transactions</h2>
+        <ul id="transaction-list"></ul>
+      </div>
+
+      <div id="chart-card" class="card">
+        <h2 class="card-heading">Spending by Category</h2>
+        <canvas id="spending-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
